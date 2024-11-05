@@ -1,0 +1,55 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    width: 100vw;
+    display: flex;
+    height: 100vh;
+}
+.left{
+    width: 20%;
+    padding: 20px;
+    border-right: 1px solid black;
+}
+.left input{
+    margin: 10px;
+}
+#tworz{
+    width: 150px;
+    height: 50px;
+    cursor: pointer;
+}
+.left .row{
+flex-direction: row;
+display: flex;
+}
+.left .row .column{
+    flex-direction: column;
+}
+.column input{
+    width: 75%;
+}
+.mid{
+    width: 60%;
+    flex-wrap: wrap;
+    display: flex;
+    max-height: 100vh;
+    overflow-y: scroll;
+}
+.mid header{
+    text-align: center;
+    background-color: red;
+    width: 100%;
+    color: #fff;
+    height: 120px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+}
+.right{
+    width: 20%;
+    border-left: 1px solid black;
+}

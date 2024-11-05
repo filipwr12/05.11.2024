@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cw. 2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="left">
+            <div class="row">
+                <div class="column">
+                    <input type="text" placeholder="Ile" id="ilosc">
+                    <input type="text" placeholder="Szerokość" id="szerokosc">
+                    <input type="text" placeholder="Wysokość" id="wysokosc">
+                    <input type="color" id="color">
+                    <input type="checkbox" id="check">
+                    <label for="check">Kolka?</label>
+                    <input type="checkbox" id="check2">
+                    <label for="check2">Trojkaty?</label>
+                </div>
+                <input type="button" value="Stwórz" id="tworz" onclick="tworz()">
+            </div>
+        </div>
+        <div class="mid">
+            <header>
+                <h1>Generator</h1>
+            </header>
+        </div>
+        <div class="right">
+        </div>
+    </div>
+
+    <script>
+        function tworz() {
+            var h = document.getElementById("wysokosc").value;
+            var w = document.getElementById("szerokosc").value;
+            var j = document.getElementById("ilosc").value;
+            var k = document.getElementById("color").value;
+            var s = document.getElementById("check");
+            var s2 = document.getElementById("check2");
+
+            let container = document.querySelector(".mid");
+
+            if (s.checked) {
+                if (s2.checked) {
+                    for (let i = 0; i < j; i++) {
+                        let div = document.createElement("div");
+                        let div2 = document.createElement("div");
+                        let div3 = document.createElement("div");
+                        div.style.width = w + "px";
+                        div.style.height = h + "px";
+                        div.style.backgroundColor = k;
+                        div.style.border = "1px solid black";
+
+                        div2.style.width = w + "px";
+                        div2.style.height = h + "px";
+                        div2.style.display = "flex";
+                        div2.style.justifyContent = "center";
+                        div2.style.alignItems = "center";
+                        div2.style.borderRadius = "50%";
+                        div2.style.backgroundColor = "red";
+                        div3.style.justifyContent = "center";
+                        div3.style.alignItems = "center";
+                        div3.style.width = "50%";
+                        div3.style.height = "50%`";
+
+                        div3.style.backgroundColor = "green";
+                        div3.style.clipPath = "polygon(50% 0%, 0% 100%, 100% 100%)";
+                        container.appendChild(div);
+                        div.appendChild(div2);
+                        div2.appendChild(div3);
+                    }
+                } else {
+                    for (let i = 0; i < j; i++) {
+                        let div = document.createElement("div");
+                        let div2 = document.createElement("div");
+
+                        div.style.width = w + "px";
+                        div.style.height = h + "px";
+                        div.style.backgroundColor = k;
+                        div.style.border = "1px solid black";
+
+                        div2.style.width = w + "px";
+                        div2.style.height = h + "px";
+                        div2.style.display = "flex";
+                        div2.style.justifyContent = "center";
+                        div2.style.alignItems = "center";
+                        div2.style.borderRadius = "50%";
+                        div2.style.backgroundColor = "red";
+
+                        container.appendChild(div);
+                        div.appendChild(div2);
+                    }
+                }
+
+            }
+            else {
+
+                for (let i = 0; i < j; i++) {
+                    let div = document.createElement("div");
+
+                    div.style.width = w + "px";
+                    div.style.height = h + "px";
+                    div.style.backgroundColor = k;
+                    div.style.border = "1px solid black";
+
+                    container.appendChild(div);
+                }
+            }
+        }
+
+    </script>
+</body>
+
+</html>
